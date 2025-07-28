@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/Home.vue";
-import User from "./pages/User.vue";
-import Post from "./pages/Post.vue";
+import IndexUser from "./pages/users/Index.vue";
+import IndexPost from "./pages/posts/Index.vue";
 
 const routes = [
   { path: "/", name: "home", component: Home },
-  { path: "/user", name: "user", component: User },
-  { path: "/post", name: "post", component: Post },
+  { path: "/user", name: "user", component: IndexUser },
+  { path: "/post", name: "post", component: IndexPost },
 ];
 
 const router = createRouter({
