@@ -4,28 +4,28 @@ import { ref } from 'vue';
 import CardViewUser from '@/components/users/CardViewUser.vue';
 import { useRoute } from 'vue-router';
 
-const users = ref([]);
+const user = ref({});
 const flagLoader = ref(true);
 const route = useRoute();
 
-function getUsers() {
+function getUser() {
     axios
-        .get("https://jsonplaceholder.typicode.com/users").then(function (response) {
-            users.value = response.data;
+        .get(`https://jsonplaceholder.typicode.com/users/${route.params.id}`).then(function (response) {
+            user.value = response.data;
             flagLoader.value = false;
         })
         .catch(function (err) {
             console.log(err);
         });
 }
-getUsers();
+getUser();
 </script>
 
 <template>
     <div v-if="flagLoader" class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
-    <div v-else class="col-md-4" v-for="(user, index) in users" :key="index">
+    <div v-else class="col-md-4">
         <CardViewUser :user="user" />
     </div>
 </template>

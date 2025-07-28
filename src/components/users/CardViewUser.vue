@@ -14,9 +14,9 @@ const user = props.user;
 
 <template>
     <div class="card">
-        <div class="card-header">
+        <router-link :to="{ name: 'userId', params: { id: user.id } }" class="card-header">
             {{ user.name }}
-        </div>
+        </router-link>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Username : {{ user.username }}</li>
             <li class="list-group-item">Emaile : {{ user.email }}</li>
