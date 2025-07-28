@@ -1,11 +1,11 @@
 <script setup>
+import Header from "./components/sections/Header.vue"
 </script>
 
 <template>
-  <h1>Hello worled</h1>
+  <Header />
 
   <router-view></router-view>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
